@@ -1,16 +1,24 @@
-cifrado = {
-    'A': 'D', 'B': 'E', 'C': 'F', 'D': 'G', 'E': 'H',
-    'F': 'I', 'G': 'J', 'H': 'K', 'I': 'L', 'J': 'M',
-    'K': 'N', 'L': 'O', 'M': 'P', 'N': 'Q', 'O': 'R',
-    'P': 'S', 'Q': 'T', 'R': 'U', 'S': 'V',
-    'T': 'W', 'U': 'X', 'V': 'Y', 'W': 'Z', 'X': 'A',
-    'Y': 'B', 'Z': 'C', ' ': ' '
+#Creamos un diccionario para mapear cada letra a su correspondiente caracter encriptado
+encriptar = {
+    'a': 'P', 'b': 'Q', 'c': 'R', 'd': 'S', 'e': 'T', 'f': 'U', 'g': 'V', 'h': 'W',
+    'i': 'X', 'j': 'Y', 'k': 'Z', 'l': 'A', 'm': 'B', 'n': 'C', 'o': 'D', 'p': 'E', 'q': 'F',
+    'r': 'G', 's': 'H', 't': 'I', 'u': 'J', 'v': 'K', 'w': 'L', 'x': 'M', 'y': 'N', 'z': 'O',
 }
 
-texto = input("Introduce el texto a cifrar: ").upper()
+input_text = input("Ingrese el texto a encriptar: ")
+output_text = ""
 
-for letra in texto:
-    if letra in cifrado:
-        print(cifrado[letra], end="")
+#Recorremos cada caracter del texto de entrada
+for i in input_text:
+
+    #Concatenamos el caracter encriptado al texto de salida
+    if i.lower() in encriptar:
+        output_text += encriptar[i]
+
+    #En caso de que el caracter no este en el diccionario mandamos un mensaje de error
     else:
-        print("Ingreso no válido:")
+        print(f"Ingrese caracteres validos")
+        exit()
+
+#Mostramos el texto encriptado
+print("Texto encriptado:", output_text)

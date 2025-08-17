@@ -1,16 +1,24 @@
-descifrado = {
-    'D': 'A', 'E': 'B', 'F': 'C', 'G': 'D', 'H': 'E',
-    'I': 'F', 'J': 'G', 'K': 'H', 'L': 'I', 'M': 'J',
-    'N': 'K', 'O': 'L', 'P': 'M', 'Q': 'N', 'R': 'O',
-    'S': 'P', 'T': 'Q', 'U': 'R', 'V': 'S',
-    'W': 'T', 'X': 'U', 'Y': 'V', 'Z': 'W', 'A': 'X',
-    'B': 'Y', 'C': 'Z', ' ': ' '
+#Creamos un diccionario para mapear cada letra a su correspondiente caracter desencriptado
+desencriptar = {
+    'P': 'a', 'Q': 'b', 'R': 'c', 'S': 'd', 'T': 'e', 'U': 'f', 'V': 'g', 'W': 'h',
+    'X': 'i', 'Y': 'j', 'Z': 'k', 'A': 'l', 'B': 'm', 'C': 'n', 'D': 'o', 'E': 'p', 'F': 'q',
+    'G': 'r', 'H': 's', 'I': 't', 'J': 'u', 'K': 'v', 'L': 'w', 'M': 'x', 'N': 'y', 'O': 'z',
 }
 
-texto = input("Introduce el texto a descifrar: ").upper()
+input_text = input("Ingrese el texto a desencriptar: ")
+output_text = ""
 
-for letra in texto:
-    if letra in descifrado:
-        print(descifrado[letra], end="")
+#Recorremos cada caracter del texto de entrada
+for i in input_text:
+
+    #Concatenamos el caracter desencriptado al texto de salida
+    if i.upper() in desencriptar:
+        output_text += desencriptar[i]
+
+    #En caso de que el caracter no este en el diccionario mandamos un mensaje de error
     else:
-        print("Ingreso no válido:", letra)
+        print(f"Ingrese caracteres validos")
+        exit()
+
+#Mostramos el texto desencriptado
+print("Texto desencriptado:", output_text)
