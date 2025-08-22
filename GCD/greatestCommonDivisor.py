@@ -1,9 +1,11 @@
-firstNumber = int(input())
-secondNumber = int(input())
+# Solicita dos números al usuario
+a = int(input("Primer número: "))
+b = int(input("Segundo número: "))
 
-def gcd(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
-    
-print(gcd(firstNumber, secondNumber))
+# Calcula el máximo común divisor usando el algoritmo de Euclides paso a paso
+while b != 0:
+    temp = b
+    b = a % b
+    a = temp
+
+print(a)

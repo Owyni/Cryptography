@@ -1,7 +1,11 @@
-number = int(input())
+# Solicita al usuario un número entero
+number = int(input("Ingrese un número: "))
 
-divisors = [
-    i for i in range(1, int(number) + 1) if int(number) % i == 0
-]
+divisores = []
 
-print(divisors)
+for i in range(1, number + 1):
+    # Reviso si i es divisor exacto del número
+    if number % i == 0:
+        divisores.append(i)
+
+print(divisores)
