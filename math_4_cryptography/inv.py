@@ -1,4 +1,3 @@
-import module
 from module import mod
 
 inv_a = int(input("Número a invertir (inv_a): "))
