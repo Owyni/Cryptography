@@ -1,16 +1,18 @@
-import restCalculate
-from restCalculate import mod
+import module
+from module import mod
 
-inv_a = int(input("inv(_) : "))
-m = int(input("Escribe el modulo: "))
+inv_a = int(input("Número a invertir (inv_a): "))
+m = int(input("Módulo (m): "))
 
-def calc_inv(inv):
-    for i in range(m - 1):
-        for j in range(m -1):
-            if mod((inv_a * i), (m * j)) == 1:
-                inv = (inv_a * i)
-                return inv
-                break
+def calc_inv(a, m):
+    for i in range(1, m):
+        if mod((a * i), m) == 1:
+            return i
+    return None
 
+resultado = calc_inv(inv_a, m)
 
-print(calc_inv)
+if resultado:
+    print(f"El inverso modular de {inv_a} mod {m} es: {resultado}")
+else:
+    print(f"No existe inverso modular de {inv_a} mod {m}")
